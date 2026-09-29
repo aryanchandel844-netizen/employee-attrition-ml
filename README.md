@@ -75,15 +75,16 @@ Streamlit Dashboard
 ## Screenshots
 
 ### Screenshot 1
-![Dashboard](images/dashboard.png)
+![Dashboard](./images/dashboard.png)
 
 ### Screenshot 2
-![Department Analysis](images/department_analysis.png)
+![Department Analysis](./images/department_analysis.png)
 
 ### Screenshot 3
-![Overtime vs Attrition](images/overtime_analysis.png)
+![Overtime vs Attrition](./images/overtime_analysis.png)
 
 ### Screenshot 4
-![Prediction Input](images/prediction_input.png)
+![Prediction Input](./images/prediction_input.png)
+
 
 
