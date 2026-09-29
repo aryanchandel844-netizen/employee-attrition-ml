@@ -71,6 +71,7 @@ Random Forest Model
 Model Serialization
      ↓
 Streamlit Dashboard
+```
 
 ## Screenshots
 
