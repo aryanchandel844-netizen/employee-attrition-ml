@@ -74,17 +74,20 @@ Streamlit Dashboard
 
 ## Screenshots
 
-### Screenshot 1
-![Dashboard](./images/dashboard.png)
+### Dashboard
+![Dashboard](./Dashboard.png)
 
-### Screenshot 2
-![Department Analysis](./images/department_analysis.png)
+### Department Analysis
+![Department Analysis](./Department%20Graph.png)
 
-### Screenshot 3
-![Overtime vs Attrition](./images/overtime_analysis.png)
+### Overtime vs Attrition
+![Overtime vs Attrition](./Overtime%20vs%20Attrition.png)
 
-### Screenshot 4
-![Prediction Input](./images/prediction_input.png)
+### Prediction Input
+![Prediction Input](./prediction_input.png)
+
+### HR Analytics Dashboard
+![HR Analytics Dashboard](./Hr%20Analytics%20Dashboard.png)
 
 
 
