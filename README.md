@@ -71,3 +71,21 @@ Random Forest Model
 Model Serialization
      ↓
 Streamlit Dashboard
+
+## Dashboard Preview
+
+### Employee Attrition Dashboard
+
+![Employee Attrition Dashboard](images/dashboard.png)
+
+### Department Analysis
+
+![Department Analysis](images/department_analysis.png)
+
+### Overtime vs Attrition
+
+![Overtime vs Attrition](images/overtime_analysis.png)
+
+### Employee Prediction Input
+
+![Employee Prediction Input](images/prediction_input.png)
