@@ -72,24 +72,18 @@ Model Serialization
      ↓
 Streamlit Dashboard
 
-
-
 ## Screenshots
 
-## Dashboard Preview
+### Screenshot 1
+![Dashboard](images/dashboard.png)
 
-### Employee Attrition Dashboard
-
-![Employee Attrition Dashboard](images/dashboard.png)
-
-### Department Analysis
-
+### Screenshot 2
 ![Department Analysis](images/department_analysis.png)
 
-### Overtime vs Attrition
-
+### Screenshot 3
 ![Overtime vs Attrition](images/overtime_analysis.png)
 
-### Employee Prediction Input
+### Screenshot 4
+![Prediction Input](images/prediction_input.png)
 
-![Employee Prediction Input](images/prediction_input.png)
+
