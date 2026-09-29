@@ -89,5 +89,3 @@ Streamlit Dashboard
 ### HR Analytics Dashboard
 ![HR Analytics Dashboard](./Hr%20Analytics%20Dashboard.png)
 
-
-
