@@ -72,6 +72,10 @@ Model Serialization
      ↓
 Streamlit Dashboard
 
+
+
+## Screenshots
+
 ## Dashboard Preview
 
 ### Employee Attrition Dashboard
