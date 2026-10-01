@@ -172,18 +172,3 @@ streamlit run app.py
 ![Prediction Input](./images/prediction_input.png)
 
 
-```
-## Screenshots
-
-### Dashboard
-![Dashboard](./images/dashboard.png)
-
-### Department Analysis
-![Department Analysis](./images/department_analysis.png)
-
-### Overtime vs Attrition
-![Overtime Analysis](./images/overtime_analysis.png)
-
-### Prediction Input
-![Prediction Input](./images/prediction_input.png)
-
