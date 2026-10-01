@@ -82,8 +82,8 @@ pip install -r requirements.txt
 
 ### 3. Run the Streamlit application
 streamlit run app.py
-```
 
+```
 ## Screenshots
 
 ### Dashboard
