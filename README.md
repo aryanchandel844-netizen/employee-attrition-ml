@@ -72,6 +72,17 @@ Model Serialization
      ↓
 Streamlit Dashboard
 ```
+## How to Run
+
+### 1. Clone the repository
+git clone https://github.com/aryanchandel844-netizen/employee-attrition-ml.git
+
+### 2. Install dependencies
+pip install -r requirements.txt
+
+### 3. Run the Streamlit application
+streamlit run app.py
+```
 
 ## Screenshots
 
