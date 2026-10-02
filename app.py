@@ -229,46 +229,24 @@ st.write(
 
 input_data = {}
 
-
-# -----------------------------
-# Create input fields
-# -----------------------------
-
 for column in training_data.columns:
-
     if training_data[column].dtype == "object":
-
         options = sorted(
-            training_data[column]
-            .dropna()
-            .unique()
-            .tolist()
+            training_data[column].dropna().unique().tolist()
         )
-
-        input_data[column] = st.selectbox(
-            column,
-            options
-        )
+        input_data[column] = st.selectbox(column, options)
 
     else:
-
-        min_value = float(
-            training_data[column].min()
-        )
-
-        max_value = float(
-            training_data[column].max()
-        )
-
-        default_value = float(
-            training_data[column].median()
-        )
+        min_value = int(training_data[column].min())
+        max_value = int(training_data[column].max())
+        default_value = int(training_data[column].median())
 
         input_data[column] = st.number_input(
             column,
             min_value=min_value,
             max_value=max_value,
-            value=default_value
+            value=default_value,
+            step=1
         )
 
 
