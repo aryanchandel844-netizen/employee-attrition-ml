@@ -1,4 +1,14 @@
+# 👨‍💼 Employee Attrition Prediction
 
+AI/ML powered employee attrition prediction and HR analytics dashboard.
+
+## 🚀 Live Demo
+
+👉 [Employee Attrition Prediction Dashboard](https://employee-attrition-ml-db99.onrender.com)
+
+## 📌 Overview
+
+This project predicts employee attrition using Machine Learning...
 # Employee Attrition Prediction & HR Analytics
 
 An end-to-end Machine Learning project that predicts employee attrition risk and provides an interactive HR analytics dashboard using Streamlit.
