@@ -1,4 +1,3 @@
-
 import streamlit as st
 import pandas as pd
 import joblib
@@ -37,6 +36,7 @@ training_data = pd.read_csv(
 # -----------------------------
 
 st.title("👨‍💼 Employee Attrition Prediction")
+
 st.write(
     "AI/ML powered employee attrition prediction and HR analytics dashboard."
 )
@@ -98,27 +98,23 @@ st.divider()
 
 
 # -----------------------------
-# Analytics
+# Analytics Dashboard
 # -----------------------------
 
 st.subheader("📊 HR Analytics Dashboard")
-
 
 col1, col2 = st.columns(2)
 
 
 # -----------------------------
-# Pie Chart
+# Attrition Distribution
 # -----------------------------
 
 with col1:
 
     st.markdown("### 🥧 Attrition Distribution")
 
-    attrition_counts = (
-        df["Attrition"]
-        .value_counts()
-    )
+    attrition_counts = df["Attrition"].value_counts()
 
     fig, ax = plt.subplots(
         figsize=(6, 5)
@@ -140,9 +136,11 @@ with col1:
         use_container_width=True
     )
 
+    plt.close(fig)
+
 
 # -----------------------------
-# Department Bar Chart
+# Department Analysis
 # -----------------------------
 
 with col2:
@@ -166,6 +164,7 @@ with col2:
 
     ax.set_xlabel("Department")
     ax.set_ylabel("Employees")
+
     ax.set_title(
         "Employees by Department"
     )
@@ -180,9 +179,11 @@ with col2:
         use_container_width=True
     )
 
+    plt.close(fig)
+
 
 # -----------------------------
-# Overtime Chart
+# Overtime Analysis
 # -----------------------------
 
 st.markdown("### 📈 Overtime vs Attrition")
@@ -203,6 +204,7 @@ overtime_data.plot(
 
 ax.set_xlabel("Overtime")
 ax.set_ylabel("Number of Employees")
+
 ax.set_title(
     "Overtime and Employee Attrition"
 )
@@ -211,6 +213,8 @@ st.pyplot(
     fig,
     use_container_width=True
 )
+
+plt.close(fig)
 
 
 st.divider()
@@ -227,19 +231,68 @@ st.write(
 )
 
 
+# -----------------------------
+# Input data
+# -----------------------------
+
 input_data = {}
 
+
+# These columns contain text/categorical values
+categorical_columns = [
+    "BusinessTravel",
+    "Department",
+    "EducationField",
+    "Gender",
+    "JobRole",
+    "MaritalStatus",
+    "OverTime"
+]
+
+
 for column in training_data.columns:
-    if training_data[column].dtype == "object":
+
+    # -------------------------
+    # Categorical input
+    # -------------------------
+
+    if column in categorical_columns:
+
         options = sorted(
-            training_data[column].dropna().unique().tolist()
+            training_data[column]
+            .dropna()
+            .astype(str)
+            .unique()
+            .tolist()
         )
-        input_data[column] = st.selectbox(column, options)
+
+        input_data[column] = st.selectbox(
+            column,
+            options
+        )
+
+    # -------------------------
+    # Numeric input
+    # -------------------------
 
     else:
-        min_value = int(training_data[column].min())
-        max_value = int(training_data[column].max())
-        default_value = int(training_data[column].median())
+
+        numeric_values = pd.to_numeric(
+            training_data[column],
+            errors="coerce"
+        ).dropna()
+
+        min_value = int(
+            numeric_values.min()
+        )
+
+        max_value = int(
+            numeric_values.max()
+        )
+
+        default_value = int(
+            numeric_values.median()
+        )
 
         input_data[column] = st.number_input(
             column,
@@ -262,20 +315,29 @@ if st.button(
     use_container_width=True
 ):
 
+    # Create DataFrame
     input_df = pd.DataFrame(
         [input_data]
     )
 
+    # Make prediction
     prediction = model.predict(
         input_df
     )[0]
 
+    # Get probability
     probability = model.predict_proba(
         input_df
     )[0][1]
 
 
-    st.subheader("Prediction Result")
+    # -------------------------
+    # Prediction Result
+    # -------------------------
+
+    st.subheader(
+        "Prediction Result"
+    )
 
 
     result_col1, result_col2 = st.columns(2)
@@ -304,6 +366,10 @@ if st.button(
         )
 
 
+    # -------------------------
+    # Probability
+    # -------------------------
+
     st.markdown(
         "### Risk Probability"
     )
@@ -312,6 +378,10 @@ if st.button(
         float(probability)
     )
 
+
+    # -------------------------
+    # Risk message
+    # -------------------------
 
     if probability >= 0.70:
 
